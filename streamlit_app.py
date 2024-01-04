@@ -13,7 +13,7 @@ def obtener_respuesta_pregunta(pregunta, botsonic_token):
     json_data = {
         'token': botsonic_token,  # Agrega el token aquí
         'input_text': pregunta,   # Agrega la pregunta aquí
-        'chat_id': 'unique_id',   # Proporciona un ID de chat único aquí
+        'chat_id': 'a5f5afff-4c17-4ce7-b44e-d0c7cab4317a',   # Proporciona un ID de chat único aquí
     }
 
     response = requests.post(api_endpoint, headers=headers, json=json_data)
