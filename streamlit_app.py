@@ -3,7 +3,7 @@ import requests
 
 def obtener_respuesta_pregunta(pregunta, botsonic_token):
     api_endpoint = 'https://api.botsonic.ai/v1/botsonic/generate'
-
+ 
     headers = {
         'User-Agent': 'python-requests/2.28.1',
         'accept': 'application/json',
