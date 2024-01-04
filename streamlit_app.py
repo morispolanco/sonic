@@ -11,8 +11,9 @@ def obtener_respuesta_pregunta(pregunta, botsonic_token):
     }
 
     json_data = {
-        'question': pregunta,
-        'chat_history': [],
+        'token': botsonic_token,  # Agrega el token aquí
+        'input_text': pregunta,   # Agrega la pregunta aquí
+        'chat_id': 'unique_id',   # Proporciona un ID de chat único aquí
     }
 
     response = requests.post(api_endpoint, headers=headers, json=json_data)
