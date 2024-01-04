@@ -2,12 +2,15 @@ import streamlit as st
 import requests
 
 def obtener_respuesta_pregunta(pregunta, botsonic_token):
-    api_endpoint = 'https://api.botsonic.ai/v1/botsonic/generate'
- 
+    api_endpoint = '<your-API-endpoint>'  # Reemplaza con la URL real de la API
+
     headers = {
+        'Accept-Encoding': 'gzip, deflate',
+        'Connection': 'keep-alive',
+        'Content-Type': 'application/json',
         'User-Agent': 'python-requests/2.28.1',
         'accept': 'application/json',
-        'Authorization': f'Bearer {botsonic_token}',
+        'token': botsonic_token,
     }
 
     json_data = {
@@ -20,7 +23,7 @@ def obtener_respuesta_pregunta(pregunta, botsonic_token):
     if response.status_code == 200:
         return response.json().get('output', 'No se pudo obtener una respuesta.')
     else:
-        return f'Error al realizar la solicitud: {response.status_code}'
+        return f'Error al realizar la solicitud: {response.status_code}\nRespuesta completa: {response.text}'
 
 def main():
     st.title("Aplicación de Streamlit - Preguntas sobre leyes de Guatemala")
